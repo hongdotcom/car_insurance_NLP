@@ -1,0 +1,206 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  
+    <title>
+      {% block title %}Turner's Online Auction Chatbot{% endblock %}
+    </title>
+  </head>
+
+  <body>
+    <div class="bg">
+      <div class="bg-img"></div>
+      <div class="container justify-content-end">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{% url 'home' %}"
+          ><p class="navbar-logo">TURNER</p>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="{% url 'home' %}"
+                >Home <span class="sr-only">(current)</span></a
+              >
+              <a class="nav-item nav-link text-primary" href="{% url 'home' %}">Features</a>
+              <a class="nav-item nav-link text-primary" href="{% url 'home' %}">Pricing</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="search-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-3 my-2">
+              <form method="POST" id="myForm" enctype="multipart/form-data">
+                <div class="form-group">
+                  {% csrf_token %}   
+                  <div class="drop-zone">
+                    <span class="drop-zone__prompt">Drop or Click</span>
+                    <input type="file" name="myfile" class="drop-zone__input">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-9 my-4 justify-content-start align-items-center">
+              {% if res %} 
+              {% if res == "No Match" %}
+              <p class="text-primary">Your upload file doen't match</p>
+              <a href="#">{{uploaded_file_url}}</a>
+              {% elif res == "Too Big" %}
+              <p class="text-danger">Your file size is too big. Please keep it below 5MB!</p>
+           
+              {% elif res == "Unknown" %}
+              <p class="text-danger">I don't think it's a car. Can you try something else</p>
+            
+              {% else %}
+                <p class="text-dark">Your picture is a {{res}}. The below is your buying options.</p>
+                <a href="../..{{uploaded_file_url}}" target="_blank">Your Uploaded File is Here</a>
+              {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "eb1fb678-0179-4b27-bce1-422ab11d917e", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "4c2ce12e-01d3-4a57-8df8-70699b56e987", // The ID of your service instance.
+    onLoad: function (instance) {
+      instance.render();
+    },
+  };
+  setTimeout(function () {
+    const t = document.createElement("script");
+    t.src =
+      "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+<script>
+  document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+  const dropZoneElement = inputElement.closest(".drop-zone");
+
+  dropZoneElement.addEventListener("click", (e) => {
+    inputElement.click();
+
+  });
+
+  inputElement.addEventListener("change", (e) => {
+    if (inputElement.files.length) {
+      updateThumbnail(dropZoneElement, inputElement.files[0]);
+      document.forms["myForm"].submit();
+    }
+    if (inputElement.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      // updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+      document.forms["myForm"].submit();
+    }
+  });
+
+  dropZoneElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZoneElement.classList.add("drop-zone--over");
+  });
+
+  ["dragleave", "dragend"].forEach((type) => {
+    dropZoneElement.addEventListener(type, (e) => {
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      // updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+      document.forms["myForm"].submit();
+    }
+
+    dropZoneElement.classList.remove("drop-zone--over");
+  });
+});
+
+/**
+ * Updates the thumbnail on a drop zone element.
+ *
+ * @param {HTMLElement} dropZoneElement
+ * @param {File} file
+ */
+function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+  // First time - remove the prompt
+  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+    dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  }
+
+  // First time - there is no thumbnail element, so lets create it
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop-zone__thumb");
+    dropZoneElement.appendChild(thumbnailElement);
+  }
+
+  thumbnailElement.dataset.label = file.name;
+
+  // Show thumbnail for image files
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+}
+
+</script>

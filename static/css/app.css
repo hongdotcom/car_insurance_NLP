@@ -1,0 +1,215 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: #7f7fd5;
+  background: -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+  background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
+}
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.bg {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  min-height: 100%;
+  min-width: 100%;
+}
+.bg .bg-img {
+  background: url("../../static/images/bg1.jpg");
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.7;
+}
+.navbar-logo {
+  font-family: "Rock Salt", sans-serif;
+  justify-content: start;
+  font-size: 22px;
+  color: red;
+}
+.navbar-item {
+  font-family: "Roboto", sans-serif;
+}
+
+.search-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  height: auto;
+  min-width: 380px;
+  border-radius: 15px !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.drop-zone {
+  max-width: 200px;
+  height: 100px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  color: #cccccc;
+  border: 4px dashed #009578;
+  border-radius: 10px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  max-width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  position: relative;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}
+.card {
+  position: relative;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: auto;
+  border-radius: 15px !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
+}
+.card-img-top {
+  border-radius: 15px !important;
+}
+.img-text {
+  position: absolute;
+  top: 12%;
+  left: 2%;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.card a {
+  text-decoration: none;
+  outline: none;
+}
+.card .card-flyer {
+  border-radius: 15px;
+}
+.card .card-flyer .image-box {
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+.card .card-flyer .image-box img {
+  -webkit-transition: all 0.9s ease;
+  -moz-transition: all 0.9s ease;
+  -o-transition: all 0.9s ease;
+  -ms-transition: all 0.9s ease;
+  width: 100%;
+  height: 100%;
+}
+.card .card-flyer:hover .image-box img {
+  opacity: 0.7;
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  transform: scale(1.15);
+}
+.card .card-flyer .text-box {
+  text-align: center;
+}
+.card .card-flyer .text-box .text-container {
+  padding: 30px 18px;
+}
+.card .card-flyer {
+  background: #ffffff;
+
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
+}
+.card .card-flyer:hover {
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.card .card-flyer .text-box p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+.card .card-flyer .text-box h6 {
+  margin-top: 0px;
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Roboto Black", sans-serif;
+  letter-spacing: 1px;
+  color: #00acc1;
+}
