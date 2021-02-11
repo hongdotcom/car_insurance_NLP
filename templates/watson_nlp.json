@@ -1,0 +1,37 @@
+{
+  "usage": { "text_units": 1, "text_characters": 41, "features": 2 },
+  "sentiment": {
+    "targets": [
+      { "text": "insurance", "score": 0, "label": "neutral" },
+      { "text": "sedan", "score": 0, "label": "neutral" }
+    ],
+    "document": { "score": 0, "label": "neutral" }
+  },
+  "language": "en",
+  "keywords": [
+    {
+      "text": "sedan Nissan",
+      "relevance": 0.983223,
+      "emotion": {
+        "sadness": 0.259486,
+        "joy": 0.022622,
+        "fear": 0.096168,
+        "disgust": 0.110024,
+        "anger": 0.193852
+      },
+      "count": 1
+    },
+    {
+      "text": "insurance",
+      "relevance": 0.690082,
+      "emotion": {
+        "sadness": 0.259486,
+        "joy": 0.022622,
+        "fear": 0.096168,
+        "disgust": 0.110024,
+        "anger": 0.193852
+      },
+      "count": 1
+    }
+  ]
+}

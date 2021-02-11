@@ -1,0 +1,208 @@
+{
+  "_type": "SearchResponse",
+  "instrumentation": {
+    "_type": "ResponseInstrumentation",
+    "pingUrlBase": "https://www.bingapis.com/api/ping?IG=8B8A78A7F5834089A5737F72516CE9DB&CID=161B71E4723D6F960FF57E3E73B66E21&ID=",
+    "pageLoadPingUrl": "https://www.bingapis.com/api/ping/pageload?IG=8B8A78A7F5834089A5737F72516CE9DB&CID=161B71E4723D6F960FF57E3E73B66E21&Type=Event.CPT&DATA=0"
+  },
+  "queryContext": { "originalQuery": "I want a sedan" },
+  "webPages": {
+    "webSearchUrl": "https://www.bing.com/search?q=I+want+a+sedan",
+    "webSearchUrlPingSuffix": "DevEx,5348.1",
+    "totalEstimatedMatches": 10600,
+    "value": [
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.0",
+        "name": "Used Nissan Fuga 2011 | Wellington - Porirua | at Turners ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/nissan/fuga/21124006",
+        "urlPingSuffix": "DevEx,5090.1",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/nissan/fuga/21124006",
+        "snippet": "Turners - Looking to buy 2011 Nissan Fuga ? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T12:25:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.1",
+        "name": "Used Mitsubishi Lancer GSR 2016 | Westgate | at Turners ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/mitsubishi/lancer/21160951",
+        "urlPingSuffix": "DevEx,5102.1",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/mitsubishi/lancer/21160951",
+        "snippet": "Turners - Looking to buy 2016 Mitsubishi Lancer GSR? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T13:23:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.2",
+        "name": "Used Toyota Prius 2011 | New Plymouth | at Turners Cars ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/toyota/prius/21120437",
+        "urlPingSuffix": "DevEx,5114.1",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/toyota/prius/21120437",
+        "snippet": "Turners - Looking to buy 2011 Toyota Prius ? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T04:16:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.3",
+        "name": "Used Ford Explorer 2005 | Christchurch City | at Turners ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/ford/explorer/19459724",
+        "urlPingSuffix": "DevEx,5126.1",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/ford/explorer/19459724",
+        "snippet": "Turners - Looking to buy 2005 Ford Explorer ? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T05:40:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.4",
+        "name": "Used MG TF 1955 | Christchurch City | at Turners Cars ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/mg/tf/21470176",
+        "urlPingSuffix": "DevEx,5138.1",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/mg/tf/21470176",
+        "snippet": "Turners - Looking to buy 1955 MG TF ? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T04:20:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.5",
+        "name": "Used Hyundai I20 2012 | Westgate | at Turners Cars ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/hyundai/i20/21154644",
+        "urlPingSuffix": "DevEx,5151.1",
+        "datePublished": "2021-02-11T00:00:00.0000000",
+        "datePublishedDisplayText": "Feb 11, 2021",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/hyundai/i20/21154644",
+        "snippet": "Turners - Looking to buy 2012 Hyundai I20 ? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-09T07:06:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.6",
+        "name": "Used Isuzu D-MAX LS DC 2016 | Dunedin | at Turners Cars ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/isuzu/d-max/19436862",
+        "urlPingSuffix": "DevEx,5164.1",
+        "datePublished": "2021-02-16T00:00:00.0000000",
+        "datePublishedDisplayText": "Feb 16, 2021",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/isuzu/d-max/19436862",
+        "snippet": "Turners - Looking to buy 2016 Isuzu D-MAX LS DC? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T04:16:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.7",
+        "name": "Used Hyundai I30 2012 | Westgate | at Turners Cars ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/hyundai/i30/21154587",
+        "urlPingSuffix": "DevEx,5177.1",
+        "datePublished": "2021-02-11T00:00:00.0000000",
+        "datePublishedDisplayText": "Feb 11, 2021",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/hyundai/i30/21154587",
+        "snippet": "Turners - Looking to buy 2012 Hyundai I30 ? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-09T04:08:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.8",
+        "name": "Used Hyundai Tucson City 2007 | Palmerston North | at ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/hyundai/tucson/21140218",
+        "urlPingSuffix": "DevEx,5189.1",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/hyundai/tucson/21140218",
+        "snippet": "Turners - Looking to buy 2007 Hyundai Tucson City? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T02:13:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      },
+      {
+        "id": "https://api.bing.microsoft.com/api/v7/#WebPages.9",
+        "name": "Used Volkswagen Golf Variant 1.4 90KW 2010 | Christchurch ...",
+        "url": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/volkswagen/golf/21079540",
+        "urlPingSuffix": "DevEx,5201.1",
+        "isFamilyFriendly": True,
+        "displayUrl": "https://www.turners.co.nz/Cars/Used-Cars-for-Sale/volkswagen/golf/21079540",
+        "snippet": "Turners - Looking to buy 2010 Volkswagen Golf Variant 1.4 90KW? A better way to buy. New Zealand's largest range of used cars for sale.",
+        "dateLastCrawled": "2021-02-10T10:56:00.0000000Z",
+        "fixedPosition": False,
+        "language": "en",
+        "isNavigational": False
+      }
+    ]
+  },
+  "rankingResponse": {
+    "mainline": {
+      "items": [
+        {
+          "answerType": "WebPages",
+          "resultIndex": 0,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.0" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 1,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.1" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 2,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.2" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 3,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.3" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 4,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.4" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 5,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.5" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 6,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.6" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 7,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.7" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 8,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.8" }
+        },
+        {
+          "answerType": "WebPages",
+          "resultIndex": 9,
+          "value": { "id": "https://api.bing.microsoft.com/api/v7/#WebPages.9" }
+        }
+      ]
+    }
+  }
+}

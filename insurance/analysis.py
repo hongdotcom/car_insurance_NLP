@@ -1,50 +1,49 @@
-import boto3
 
-def detect_labels_local_file(photo):
+import requests
+import urllib
 
-    #define service used
-    client=boto3.client('rekognition')
-    #define result varible
-    resp = ''
+def bing_search(searchTxt):
 
-    #Open image file
-    with open(photo, 'rb') as image:
-        response = client.detect_labels(Image={'Bytes': image.read()})
-    #debug resposes 
-    # print('Detected labels in ' + photo)    
-    # print(response['Labels'])
+    headers = {
+    'Ocp-Apim-Subscription-Key': '621deae3d9184b97b93c599e91824ae7',
+}
+    payload = (
+    ('q', searchTxt),
+    ('customconfig', '5a9e651c-63f6-47e4-a603-db31b2b7fd82'),
+    ('mkt', 'en-US'),
+    ('safesearch','Off'),
+)
+    params = urllib.parse.urlencode(payload)
+    res  = requests.get('https://api.bing.microsoft.com/v7.0/custom/search', params=params, headers=headers)
+    print('bing')
+    result = res.json()
+    displayTxt = {}
+    for item in result["webPages"]["value"]:
+      
+      displayTxt[item["name"]] = item["url"]
+    # print(displayTxt)
+    return displayTxt
 
-    #Iterate thru all detected labels
-    for label in response['Labels']:
-        #debug msg 
-        # print (label['Name'] + ' : ' + str(label['Confidence']))
-        #Since result set is displayed by highest possbility first. We decided to only take the most possible result only. 
-        #So if the result is empty, add the highest possble one
-        if possible_outcome(label) != 'NOT Matched':
-            if not resp:
-               
-                resp = possible_outcome(label)
-                # print(resp)
-                
-    #if there is no detected label found, then return no match.
-    if not resp:
-        return "No Match"
-    return resp
-
-#Function to detect the label that we want to file. In this case car search 
-def possible_outcome(label):
-    switcher={
-        'Truck':'truck',
-        'Wagon': 'wagon',
-        'Sedan':'sedan',
-        'Coupe': 'coupe',
-        'Hatchback': 'hatchback',
-        'Suv': 'suv',
-        'Pickup Truck': 'pickup',
-        'Convertible':'convertible',
-
+def nlp_check(searchTxt):
+   
+    headers = {
+        'Content-Type': 'application/json',
     }
-    #debug messag
-    print(switcher.get(label['Name'],'NOT Matched'))
-    return switcher.get(label['Name'],'NOT Matched')
+    params = (
+        ('version', '2019-07-12'),
+    )
+    txt = "{}".format(searchTxt)
+    target = '"car","insurance","coupe","sedan","suv","pickup truck"'
+    data = '{ "text":"' + txt + '", "features": { "sentiment": { "targets": [' + target + '] }, "keywords": { "emotion": true } } }'
+    res = requests.post('https://api.au-syd.natural-language-understanding.watson.cloud.ibm.com/instances/f64d5fec-a1be-424e-bdc0-df1c15e1967d/v1/analyze', headers=headers, params=params, data=data, auth=('apikey', 'pDqahAuneL2ZKLAoEmxTMeOWhJKWcx75MHq3Kx1AdLvk'))
+    result = res.json()
+    print(result)
+    return find_insurance(result)
 
+def find_insurance(nlp_res):
+    for item in nlp_res["sentiment"]["targets"]:
+      print(item)
+      if item["text"] == "insurance":
+        print("it got insurances")
+        return True
+    return False

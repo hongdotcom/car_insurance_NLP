@@ -1,1 +1,78 @@
-{% extends 'base.html' %} {% block content %} {% endblock %}
+{% extends 'base.html' %} {% load widget_tweaks %} {% block content %}
+
+<div class="result-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 my-2">
+        <form method="POST" id="myForm" enctype="multipart/form-data">
+          {% csrf_token %} {% for field in form %}
+          <div class="form-group col-8 my-2">
+            {{ field.label_tag }} {% render_field field class="form-control" %}
+            {% if field.help_text %}
+            <small class="form-text text-muted"> {{ field.help_text }} </small>
+            {% endif %}
+          </div>
+          {% endfor %}
+          <div class="form-group col-3 my-2">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="search-container my-2">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="pagination col-8 center">
+        <span class="step-links">
+          {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current"> {{ page_obj.number }} </span>
+
+          {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">next</a>
+          {% endif %}
+        </span>
+      </div> -->
+      <div class="col-12 my-4 justify-content-center align-items-right">
+        <div class="row">
+          <div class="col-9">
+            <p>
+              <a href="{% url 'car_detail' %}" target="_blank"
+                >Used Nissan Leaf 2013 SOH85% ...</a
+              >
+            </p>
+          </div>
+          {% if nlp_res %}
+          <div class="col align-items-right">
+            <a href="{% url 'insurance' %}">
+              <button class="btn btn-success" type="button">
+                Insurance Quotes
+              </button>
+            </a>
+          </div>
+          {% endif %} {% if bing_res %} {% for key,value in bing_res.items %}
+
+          <div class="col-9">
+            <p><a href="{{value}}" target="_blank">{{key}}</a></p>
+          </div>
+          {% if nlp_res %}
+          <div class="col align-items-right">
+            <a href="{% url 'insurance' %}">
+              <button class="btn btn-success" type="button">
+                Insurance Quotes
+              </button>
+            </a>
+          </div>
+          {% endif %} {% endfor %} {% endif %}
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
