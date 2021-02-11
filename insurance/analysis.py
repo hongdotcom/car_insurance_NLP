@@ -34,13 +34,15 @@ def nlp_check(searchTxt):
     )
     txt = "{}".format(searchTxt)
     target = '"car","insurance","coupe","sedan","suv","pickup truck"'
-    data = '{ "text":"' + txt + '", "features": { "sentiment": { "targets": [' + target + '] }, "keywords": { "emotion": true } } }'
+    data = '{ "text":"' + searchTxt + '", "features": { "sentiment": { "targets": [' + target + '] }, "keywords": { "emotion": true } } }'
     res = requests.post('https://api.au-syd.natural-language-understanding.watson.cloud.ibm.com/instances/f64d5fec-a1be-424e-bdc0-df1c15e1967d/v1/analyze', headers=headers, params=params, data=data, auth=('apikey', 'pDqahAuneL2ZKLAoEmxTMeOWhJKWcx75MHq3Kx1AdLvk'))
+    print(data)
     result = res.json()
     print(result)
     return find_insurance(result)
 
 def find_insurance(nlp_res):
+    print(nlp_res)
     for item in nlp_res["sentiment"]["targets"]:
       print(item)
       if item["text"] == "insurance":
