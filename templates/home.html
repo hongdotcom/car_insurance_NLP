@@ -39,6 +39,7 @@
       </div> -->
       <div class="col-12 my-4 justify-content-center align-items-right">
         <div class="row">
+          {% if bing_res %}
           <div class="col-9">
             <p>
               <a href="{% url 'car_detail' %}" target="_blank"
@@ -46,7 +47,7 @@
               >
             </p>
           </div>
-          {% if nlp_res %}
+          {% endif %} {% if nlp_res %}
           <div class="col align-items-right">
             <a href="{% url 'insurance' %}">
               <button class="btn btn-success" type="button">

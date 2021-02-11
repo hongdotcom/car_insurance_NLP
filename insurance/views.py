@@ -13,8 +13,8 @@ def home(request):
     if form.is_valid():
       # print('call serach and iterate list')
       bing_res = bing_search(request.POST['searchTxt'])
-      nlp_res = True
-      # nlp_res = nlp_check(request.POST['searchTxt'])      
+      # nlp_res = True
+      nlp_res = nlp_check(request.POST['searchTxt'])      
       # paginator = Paginator(list(bing_res), 10)
       # page_number = request.GET.get('page')
       # page_obj = paginator.get_page(page_number)
